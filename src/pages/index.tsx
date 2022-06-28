@@ -15,10 +15,11 @@ import { HomeSwiper } from "../components/Home/HomeSwiper";
 const Home: NextPage = () => (
   <Fragment>
     <Flex
-      backgroundImage="url(/images/home-banner.png)"
+      backgroundImage="url(/images/banners/home-banner.png)"
       backgroundSize="cover"
       backgroundPosition="center"
       backgroundRepeat="no-repeat"
+      bgColor="black"
       h={370}
       align="center"
     >

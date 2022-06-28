@@ -1,4 +1,5 @@
-import { Heading, Stack, Text } from "@chakra-ui/react";
+import { Link as ChakraLink, Stack, Text } from "@chakra-ui/react";
+import Link from "next/link";
 
 interface HomeSwiperSlideProps {
   continent: string;
@@ -19,11 +20,20 @@ export const HomeSwiperSlide: React.FC<HomeSwiperSlideProps> = ({
     backgroundSize="cover"
     backgroundPosition="center"
     backgroundRepeat="no-repeat"
+    bgColor="black"
     h={450}
   >
-    <Heading as="h3" color="gray.100" fontWeight="bold" fontSize={48}>
-      {heading}
-    </Heading>
+    <Link href={`/${continent}`} passHref>
+      <ChakraLink
+        href="#"
+        color="gray.100"
+        _hover={{ color: "brand" }}
+        fontWeight="bold"
+        fontSize={48}
+      >
+        {heading}
+      </ChakraLink>
+    </Link>
 
     <Text color="gray.300" fontWeight="bold" fontSize={24}>
       {description}
