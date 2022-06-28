@@ -3,6 +3,7 @@ import { AppProps } from "next/app";
 import Head from "next/head";
 import { Fragment } from "react";
 import { Header } from "../components/Header";
+import "../styles/swiper.scss";
 import { theme } from "../styles/theme";
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => (
