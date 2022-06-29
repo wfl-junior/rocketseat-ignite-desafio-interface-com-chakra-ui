@@ -16,6 +16,7 @@ export const Header: React.FC = () => {
       bgColor="gray.100"
       zIndex={100}
       boxShadow="0 3px 10px rgb(0 0 0 / 0.2)"
+      px={[4, 5, 6]}
     >
       <Flex
         align="center"
@@ -33,8 +34,8 @@ export const Header: React.FC = () => {
             position="absolute"
             left={0}
             onClick={() => router.back()}
-            w={8}
-            h={8}
+            w="2vw"
+            maxW={3}
           >
             <ChevronLeft />
           </Flex>

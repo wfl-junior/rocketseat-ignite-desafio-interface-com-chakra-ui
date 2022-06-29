@@ -1,16 +1,8 @@
-interface ChevronLeftProps {
-  width?: number;
-  height?: number;
-}
-
-export const ChevronLeft: React.FC<ChevronLeftProps> = ({
-  width = 10,
-  height = 18,
-}) => (
+export const ChevronLeft: React.FC = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={width}
-    height={height}
+    width="100%"
+    height="100%"
     fill="none"
     viewBox="0 0 10 18"
   >

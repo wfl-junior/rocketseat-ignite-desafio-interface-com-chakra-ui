@@ -24,7 +24,7 @@ export const CityCard: React.FC<CityCardProps> = ({
 
     <HStack
       align="center"
-      p={6}
+      p={[3, 4, 5, 6]}
       justify="space-between"
       border="1px solid"
       borderColor="rgb(255 186 8 / 0.5)"
@@ -32,7 +32,7 @@ export const CityCard: React.FC<CityCardProps> = ({
       borderTop={0}
       borderBottomRadius={4}
     >
-      <Stack spacing={3}>
+      <Stack spacing={[1, 2, 3]}>
         <Text fontWeight="semibold" fontSize={20}>
           {cityLabel}
         </Text>
@@ -43,8 +43,8 @@ export const CityCard: React.FC<CityCardProps> = ({
       </Stack>
 
       <Box
-        w={30}
-        h={30}
+        w="30px"
+        h="30px"
         borderRadius="full"
         boxShadow="0 0 7px rgb(0 0 0 / 0.2)"
       >
