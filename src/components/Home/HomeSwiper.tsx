@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { HomeSwiperSlide } from "./HomeSwiperSlide";
 
 export const HomeSwiper: React.FC = () => (
-  <Box borderRadius={4} overflow="hidden">
+  <Box borderRadius={{ xl: 4 }} overflow="hidden">
     <Swiper
       loop
       navigation

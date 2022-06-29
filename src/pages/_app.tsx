@@ -15,7 +15,7 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => (
     <ChakraProvider theme={theme}>
       <Header />
 
-      <Box as="main" pb={10}>
+      <Box as="main" pb={[6, 7, 8, 9, 10]}>
         <Component {...pageProps} />
       </Box>
     </ChakraProvider>

@@ -10,7 +10,7 @@ export const Header: React.FC = () => {
   return (
     <Box
       as="header"
-      h="100px"
+      h={["55px", "65px", "80px", "90px", "100px"]}
       position="sticky"
       top={0}
       bgColor="gray.100"
@@ -41,7 +41,7 @@ export const Header: React.FC = () => {
         )}
 
         <Link href="/" passHref>
-          <ChakraLink w="184px">
+          <ChakraLink w={["100px", "125px", "150px", "175px", "184px"]}>
             <Logo />
           </ChakraLink>
         </Link>
