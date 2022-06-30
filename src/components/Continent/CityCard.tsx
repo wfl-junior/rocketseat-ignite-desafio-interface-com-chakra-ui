@@ -9,6 +9,7 @@ export const CityCard: React.FC<City> = ({ label, image, country }) => (
     transition="transform 0.3s linear"
     _hover={{ transform: "scale(1.05) translateY(-3%)" }}
     boxShadow="0 0 5px rgb(0 0 0 / 0.1)"
+    overflow="hidden"
   >
     <Image src={image} objectFit="cover" w="100%" h="173px" loading="lazy" />
 
@@ -21,6 +22,8 @@ export const CityCard: React.FC<City> = ({ label, image, country }) => (
       mt="0 !important"
       borderTop={0}
       borderBottomRadius={4}
+      flex={1}
+      spacing={2}
     >
       <Stack spacing={[1, 2, 3]}>
         <Text fontWeight="semibold" fontSize={20}>
@@ -33,6 +36,7 @@ export const CityCard: React.FC<City> = ({ label, image, country }) => (
       </Stack>
 
       <Flex
+        minW="30px"
         w="30px"
         h="30px"
         borderRadius="full"

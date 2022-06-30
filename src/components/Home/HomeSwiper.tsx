@@ -26,54 +26,6 @@ export const HomeSwiper: React.FC<HomeSwiperProps> = ({ continents }) => (
           <HomeSwiperSlide {...continent} />
         </SwiperSlide>
       ))}
-
-      {/* <SwiperSlide>
-        <HomeSwiperSlide
-          continent="south-america"
-          heading="América do Sul"
-          description="O melhor continente."
-        />
-      </SwiperSlide>
-
-      <SwiperSlide>
-        <HomeSwiperSlide
-          continent="central-america"
-          heading="América Central"
-          description="O paraíso na Terra."
-        />
-      </SwiperSlide>
-
-      <SwiperSlide>
-        <HomeSwiperSlide
-          continent="north-america"
-          heading="América do Norte"
-          description="O lugar do capitalismo selvagem."
-        />
-      </SwiperSlide>
-
-      <SwiperSlide>
-        <HomeSwiperSlide
-          continent="africa"
-          heading="África"
-          description="A natureza mais selvagem."
-        />
-      </SwiperSlide>
-
-      <SwiperSlide>
-        <HomeSwiperSlide
-          continent="asia"
-          heading="Ásia"
-          description="O continente mais exótico."
-        />
-      </SwiperSlide>
-
-      <SwiperSlide>
-        <HomeSwiperSlide
-          continent="oceania"
-          heading="Oceania"
-          description="O continente mais perigoso."
-        />
-      </SwiperSlide> */}
     </Swiper>
   </Box>
 );
