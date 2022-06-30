@@ -1,0 +1,110 @@
+[
+  {
+    "slug": "europe",
+    "heading": "Europa",
+    "description": "O continente mais antigo.",
+    "banner": "https://images.unsplash.com/photo-1473951574080-01fe45ec8643?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80",
+    "sliderBanner": "https://images.unsplash.com/photo-1590309284223-3946577eb10e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1240&q=80",
+    "paragraph": "Apesar de não contar com um território muito extenso, a Europa é um continente que possui grande influência social e cultural nos demais continentes, afinal foi lá que surgiram os principais idiomas falados ao redor do mundo. O continente, que é banhado pelo oceano  Atlântico e Glacial Ártico, conta com 50 países e mais de 700 milhões de habitantes, além de ter parte de seu território marcada pela linha imaginária do Meridiano de Greenwich, que divide nos hemisférios oriental e ocidental.",
+    "countriesAmount": 50,
+    "languagesAmount": 60,
+    "cities": [
+      {
+        "label": "Londres",
+        "image": "https://images.unsplash.com/photo-1533929736458-ca588d08c8be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80",
+        "country": {
+          "code": "GB",
+          "label": "Reino Unido"
+        }
+      },
+      {
+        "label": "Paris",
+        "image": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80",
+        "country": {
+          "code": "FR",
+          "label": "França"
+        }
+      },
+      {
+        "label": "Istambul",
+        "image": "https://images.unsplash.com/photo-1627385184599-bd76f11c6317?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80",
+        "country": {
+          "code": "TR",
+          "label": "Turquia"
+        }
+      },
+      {
+        "label": "Roma",
+        "image": "https://images.unsplash.com/photo-1552832230-c0197dd311b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80",
+        "country": {
+          "code": "IT",
+          "label": "Itália"
+        }
+      },
+      {
+        "label": "Praga",
+        "image": "https://images.unsplash.com/photo-1519677100203-a0e668c92439?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80",
+        "country": {
+          "code": "CZ",
+          "label": "República Tcheca"
+        }
+      },
+      {
+        "label": "Amsterdã",
+        "image": "https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80",
+        "country": {
+          "code": "NL",
+          "label": "Holanda"
+        }
+      },
+      {
+        "label": "Barcelona",
+        "image": "https://images.unsplash.com/photo-1583422409516-2895a77efded?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80",
+        "country": {
+          "code": "ES",
+          "label": "Espanha"
+        }
+      },
+      {
+        "label": "Milão",
+        "image": "https://images.unsplash.com/photo-1610016302534-6f67f1c968d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80",
+        "country": {
+          "code": "IT",
+          "label": "Itália"
+        }
+      },
+      {
+        "label": "Viena",
+        "image": "https://images.unsplash.com/photo-1567597435927-80055c207c1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80",
+        "country": {
+          "code": "AT",
+          "label": "Áustria"
+        }
+      },
+      {
+        "label": "Berlim",
+        "image": "https://images.unsplash.com/photo-1546726747-421c6d69c929?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80",
+        "country": {
+          "code": "DE",
+          "label": "Alemanha"
+        }
+      },
+      {
+        "label": "Atenas",
+        "image": "https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80",
+        "country": {
+          "code": "GR",
+          "label": "Grécia"
+        }
+      },
+      {
+        "label": "Moscou",
+        "image": "https://images.unsplash.com/photo-1547448415-e9f5b28e570d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&q=80",
+        "country": {
+          "code": "RU",
+          "label": "Rússia"
+        }
+      }
+    ]
+  }
+]

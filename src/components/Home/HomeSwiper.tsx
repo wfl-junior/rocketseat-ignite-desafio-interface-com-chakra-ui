@@ -4,9 +4,14 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Continent } from "../../pages";
 import { HomeSwiperSlide } from "./HomeSwiperSlide";
 
-export const HomeSwiper: React.FC = () => (
+interface HomeSwiperProps {
+  continents: Continent[];
+}
+
+export const HomeSwiper: React.FC<HomeSwiperProps> = ({ continents }) => (
   <Box borderRadius={{ xl: 4 }} overflow="hidden">
     <Swiper
       loop
@@ -16,15 +21,13 @@ export const HomeSwiper: React.FC = () => (
       pagination={{ clickable: true }}
       modules={[Navigation, Pagination]}
     >
-      <SwiperSlide>
-        <HomeSwiperSlide
-          continent="europe"
-          heading="Europa"
-          description="O continente mais antigo."
-        />
-      </SwiperSlide>
+      {continents.map(continent => (
+        <SwiperSlide key={continent.slug}>
+          <HomeSwiperSlide {...continent} />
+        </SwiperSlide>
+      ))}
 
-      <SwiperSlide>
+      {/* <SwiperSlide>
         <HomeSwiperSlide
           continent="south-america"
           heading="América do Sul"
@@ -70,15 +73,7 @@ export const HomeSwiper: React.FC = () => (
           heading="Oceania"
           description="O continente mais perigoso."
         />
-      </SwiperSlide>
-
-      <SwiperSlide>
-        <HomeSwiperSlide
-          continent="antarctica"
-          heading="Antártida"
-          description="Pinguins."
-        />
-      </SwiperSlide>
+      </SwiperSlide> */}
     </Swiper>
   </Box>
 );

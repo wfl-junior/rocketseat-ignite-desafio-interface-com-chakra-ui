@@ -16,9 +16,9 @@ export const HomeBanner: React.FC = () => {
 
   return (
     <Flex
-      backgroundImage="url(/images/banners/home-banner.png)"
+      backgroundImage="url(/images/home-banner.png)"
       backgroundSize="cover"
-      backgroundPosition="center"
+      backgroundPosition="center center"
       backgroundRepeat="no-repeat"
       bgColor="black"
       h={{ base: "auto", sm: 270, lg: 370 }}
@@ -42,7 +42,7 @@ export const HomeBanner: React.FC = () => {
             fontSize={[20, 24, 28, 32, 36]}
             lineHeight={1.5}
           >
-            6 Continentes, <br /> infinitas possibilidades.
+            5 Continentes, <br /> infinitas possibilidades.
           </Heading>
 
           <Text

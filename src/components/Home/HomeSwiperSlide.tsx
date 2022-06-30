@@ -1,14 +1,10 @@
 import { Link as ChakraLink, Stack, Text } from "@chakra-ui/react";
 import Link from "next/link";
+import { Continent } from "../../pages";
 
-interface HomeSwiperSlideProps {
-  continent: string;
-  heading: string;
-  description: string;
-}
-
-export const HomeSwiperSlide: React.FC<HomeSwiperSlideProps> = ({
-  continent,
+export const HomeSwiperSlide: React.FC<Continent> = ({
+  slug,
+  sliderBanner,
   heading,
   description,
 }) => (
@@ -16,14 +12,17 @@ export const HomeSwiperSlide: React.FC<HomeSwiperSlideProps> = ({
     align="center"
     justify="center"
     spacing={{ base: 3, lg: 4 }}
-    bg={`linear-gradient(rgb(28 20 1 / 0.35), rgb(28 20 1 / 0.35)), url(/images/continents/${continent}.png)`}
     backgroundSize="cover"
-    backgroundPosition="center"
+    backgroundPosition="center center"
     backgroundRepeat="no-repeat"
     bgColor="black"
     h={{ base: 250, md: 350, xl: 450 }}
+    bgImage={`
+    linear-gradient(rgb(28 20 1 / 0.35), rgb(28 20 1 / 0.35)),
+    url(${sliderBanner})
+  `}
   >
-    <Link href={`/${continent}`} passHref>
+    <Link href={`/continent/${slug}`} passHref>
       <ChakraLink
         href="#"
         color="gray.100"

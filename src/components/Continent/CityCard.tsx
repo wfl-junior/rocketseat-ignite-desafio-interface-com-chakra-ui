@@ -1,18 +1,8 @@
-import { Box, HStack, Image, Stack, Text } from "@chakra-ui/react";
+import { Flex, HStack, Image, Stack, Text } from "@chakra-ui/react";
+import ReactCountryFlag from "react-country-flag";
+import { City } from "../../pages/continent/[slug]";
 
-interface CityCardProps {
-  citySlug: string;
-  countrySlug: string;
-  cityLabel: string;
-  countryLabel: string;
-}
-
-export const CityCard: React.FC<CityCardProps> = ({
-  citySlug,
-  cityLabel,
-  countryLabel,
-  countrySlug,
-}) => (
+export const CityCard: React.FC<City> = ({ label, image, country }) => (
   <Stack
     bgColor="white"
     borderRadius={4}
@@ -20,7 +10,7 @@ export const CityCard: React.FC<CityCardProps> = ({
     _hover={{ transform: "scale(1.05) translateY(-3%)" }}
     boxShadow="0 0 5px rgb(0 0 0 / 0.1)"
   >
-    <Image src={`/images/cities/${citySlug}.png`} />
+    <Image src={image} objectFit="cover" w="100%" h="173px" loading="lazy" />
 
     <HStack
       align="center"
@@ -34,22 +24,35 @@ export const CityCard: React.FC<CityCardProps> = ({
     >
       <Stack spacing={[1, 2, 3]}>
         <Text fontWeight="semibold" fontSize={20}>
-          {cityLabel}
+          {label}
         </Text>
 
         <Text fontWeight="medium" fontSize={16} color="gray.700">
-          {countryLabel}
+          {country.label}
         </Text>
       </Stack>
 
-      <Box
+      <Flex
         w="30px"
         h="30px"
         borderRadius="full"
         boxShadow="0 0 7px rgb(0 0 0 / 0.2)"
+        align="center"
+        justify="center"
+        overflow="hidden"
       >
-        <Image src={`/images/flags/${countrySlug}.png`} />
-      </Box>
+        <ReactCountryFlag
+          svg
+          countryCode={country.code}
+          aria-label={country.label}
+          loading="lazy"
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+          }}
+        />
+      </Flex>
     </HStack>
   </Stack>
 );

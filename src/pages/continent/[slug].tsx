@@ -1,26 +1,81 @@
-import {
-  Box,
-  Flex,
-  Grid,
-  Heading,
-  HStack,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
-import { NextPage } from "next";
+import { Flex, Grid, Heading, HStack, Stack, Text } from "@chakra-ui/react";
+import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { Fragment } from "react";
-import { CityCard } from "../components/Continent/CityCard";
+import { CityCard } from "../../components/Continent/CityCard";
+import continents from "../../data.json";
 
-const Continent: NextPage = () => (
+type ContinentParams = {
+  slug: string;
+};
+
+export interface City {
+  label: string;
+  image: string;
+  country: {
+    code: string;
+    label: string;
+  };
+}
+
+interface ContinentProps {
+  heading: string;
+  banner: string;
+  paragraph: string;
+  countriesAmount: number;
+  languagesAmount: number;
+  cities: City[];
+}
+
+export const getStaticPaths: GetStaticPaths<ContinentParams> = () => {
+  return {
+    fallback: false,
+    paths: continents.map(continent => ({
+      params: {
+        slug: continent.slug,
+      },
+    })),
+  };
+};
+
+export const getStaticProps: GetStaticProps<
+  ContinentProps,
+  ContinentParams
+> = ({ params }) => {
+  const continentData = continents.find(
+    continent => continent.slug === params?.slug,
+  );
+
+  if (!continentData) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: continentData,
+  };
+};
+
+const Continent: NextPage<ContinentProps> = ({
+  heading,
+  banner,
+  paragraph,
+  countriesAmount,
+  languagesAmount,
+  cities,
+}) => (
   <Fragment>
     <Flex
-      bg={`linear-gradient(to top, rgb(0 0 0 / 0.5), rgb(0 0 0 / 0.25)), url(/images/banners/europe-banner.png)`}
       bgColor="black"
       backgroundSize="cover"
-      backgroundPosition="center"
+      backgroundPosition="center center"
       backgroundRepeat="no-repeat"
       h={[150, 250, 350, 450, 500]}
       align="center"
+      bgImage={`
+        linear-gradient(to top, rgb(0 0 0 / 0.65), rgb(0 0 0 / 0.25)),
+        url(${banner})
+      `}
     >
       <Flex
         maxW={1160}
@@ -39,7 +94,7 @@ const Continent: NextPage = () => (
           fontSize={[28, 34, 38, 42, 48]}
           lineHeight={1.5}
         >
-          Europa
+          {heading}
         </Heading>
       </Flex>
     </Flex>
@@ -57,14 +112,13 @@ const Continent: NextPage = () => (
         px={[4, 5, 6]}
         gap={4}
       >
-        <Box maxW={600}>
-          <Text fontWeight="normal" fontSize={[14, 16, 18, 21, 24]}>
-            A Europa é, por convenção, um dos seis continentes do mundo.
-            Compreendendo a península ocidental da Eurásia, a Europa geralmente
-            divide-se da Ásia a leste pela divisória de águas dos montes Urais,
-            o rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a sudeste
-          </Text>
-        </Box>
+        <Stack maxW={600}>
+          <blockquote cite="https://www.dentrodahistoria.com.br/blog/educacao/curiosidades-continentes-paises-mundo#h-curiosidades-sobre-os-continentes-da-terra">
+            <Text fontWeight="normal" fontSize={[14, 16, 18, 21, 24]}>
+              {paragraph}
+            </Text>
+          </blockquote>
+        </Stack>
 
         <HStack spacing={["30px", "34px", "38px", "42px"]}>
           <Stack
@@ -77,7 +131,7 @@ const Continent: NextPage = () => (
               fontSize={[24, 30, 36, 42, 48]}
               fontWeight="semibold"
             >
-              50
+              {countriesAmount}
             </Text>
 
             <Text
@@ -99,7 +153,7 @@ const Continent: NextPage = () => (
               fontSize={[24, 30, 36, 42, 48]}
               fontWeight="semibold"
             >
-              60
+              {languagesAmount}
             </Text>
 
             <Text
@@ -121,13 +175,14 @@ const Continent: NextPage = () => (
               fontSize={[24, 30, 36, 42, 48]}
               fontWeight="semibold"
             >
-              27
+              {cities.length}
             </Text>
 
             <Text
               as="span"
               fontSize={[18, 20, 22, 24]}
               fontWeight={{ base: "normal", md: "medium", lg: "semibold" }}
+              textAlign="center"
             >
               cidades +100
             </Text>
@@ -142,53 +197,22 @@ const Continent: NextPage = () => (
           lineHeight={1.5}
           fontWeight="medium"
         >
-          Cidades +100
+          Cidades
         </Heading>
 
         <Grid
+          justifyContent="center"
           gap={["20px", "25px", "30px", "35px", "45px"]}
-          placeItems="center"
           templateColumns={[
-            "1fr",
-            "repeat(2, 1fr)",
-            "repeat(3, 1fr)",
-            "repeat(4, 1fr)",
+            "minmax(0, 256px)",
+            "repeat(2, minmax(0, 256px))",
+            "repeat(3, minmax(0, 256px))",
+            "repeat(4, minmax(0, 256px))",
           ]}
         >
-          <CityCard
-            citySlug="london"
-            cityLabel="Londres"
-            countryLabel="Reino Unido"
-            countrySlug="united-kingdom"
-          />
-
-          <CityCard
-            citySlug="paris"
-            cityLabel="Paris"
-            countryLabel="França"
-            countrySlug="france"
-          />
-
-          <CityCard
-            citySlug="rome"
-            cityLabel="Roma"
-            countryLabel="Itália"
-            countrySlug="italy"
-          />
-
-          <CityCard
-            citySlug="prague"
-            cityLabel="Praga"
-            countryLabel="República Tcheca"
-            countrySlug="czech-republic"
-          />
-
-          <CityCard
-            citySlug="amsterdam"
-            cityLabel="Amsterdã"
-            countryLabel="Holanda"
-            countrySlug="netherlands"
-          />
+          {cities.map(city => (
+            <CityCard key={city.label} {...city} />
+          ))}
         </Grid>
       </Stack>
     </Stack>

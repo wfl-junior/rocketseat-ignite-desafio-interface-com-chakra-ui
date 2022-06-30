@@ -1,11 +1,36 @@
 import { Box, Flex, Heading } from "@chakra-ui/react";
-import { NextPage } from "next";
+import { GetStaticProps, NextPage } from "next";
 import { Fragment } from "react";
 import { HomeBanner } from "../components/Home/HomeBanner";
 import { HomeIcon } from "../components/Home/HomeIcon";
 import { HomeSwiper } from "../components/Home/HomeSwiper";
+import continents from "../data.json";
 
-const Home: NextPage = () => (
+export interface Continent {
+  slug: string;
+  heading: string;
+  description: string;
+  sliderBanner: string;
+}
+
+interface HomeProps {
+  continents: Continent[];
+}
+
+export const getStaticProps: GetStaticProps<HomeProps> = () => {
+  return {
+    props: {
+      continents: continents.map(continent => ({
+        slug: continent.slug,
+        heading: continent.heading,
+        description: continent.description,
+        sliderBanner: continent.sliderBanner,
+      })),
+    },
+  };
+};
+
+const Home: NextPage<HomeProps> = ({ continents }) => (
   <Fragment>
     <HomeBanner />
 
@@ -47,7 +72,7 @@ const Home: NextPage = () => (
     </Heading>
 
     <Box maxW={1240} mx="auto">
-      <HomeSwiper />
+      <HomeSwiper continents={continents} />
     </Box>
   </Fragment>
 );
