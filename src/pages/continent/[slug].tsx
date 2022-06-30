@@ -197,7 +197,7 @@ const Continent: NextPage<ContinentProps> = ({
           lineHeight={1.5}
           fontWeight="medium"
         >
-          Cidades
+          Cidades +100
         </Heading>
 
         <Grid
