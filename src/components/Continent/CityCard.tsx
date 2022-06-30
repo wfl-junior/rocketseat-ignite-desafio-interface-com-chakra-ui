@@ -26,7 +26,7 @@ export const CityCard: React.FC<City> = ({ label, image, country }) => (
       spacing={2}
     >
       <Stack spacing={[1, 2, 3]}>
-        <Text fontWeight="semibold" fontSize={20}>
+        <Text fontWeight="semibold" fontSize={20} color="gray.900">
           {label}
         </Text>
 

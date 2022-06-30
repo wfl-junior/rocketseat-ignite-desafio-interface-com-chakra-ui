@@ -7,7 +7,7 @@ export const ChevronLeft: React.FC = () => (
     viewBox="0 0 10 18"
   >
     <path
-      stroke="#47585B"
+      stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="2"
