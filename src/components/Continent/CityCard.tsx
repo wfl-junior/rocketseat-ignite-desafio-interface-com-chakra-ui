@@ -11,7 +11,14 @@ export const CityCard: React.FC<City> = ({ label, image, country }) => (
     boxShadow="0 0 5px rgb(0 0 0 / 0.1)"
     overflow="hidden"
   >
-    <Image src={image} objectFit="cover" w="100%" h="173px" loading="lazy" />
+    <Image
+      src={image}
+      alt={`Cidade de ${label}`}
+      objectFit="cover"
+      w="100%"
+      h="173px"
+      loading="lazy"
+    />
 
     <HStack
       align="center"

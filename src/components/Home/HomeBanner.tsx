@@ -58,7 +58,7 @@ export const HomeBanner: React.FC = () => {
 
         {isLargeBreakpoing && (
           <Box transform="translateY(25%)">
-            <Image src="/images/airplane.svg" />
+            <Image src="/images/airplane.svg" alt="Avião e nuvens" />
           </Box>
         )}
       </Flex>
